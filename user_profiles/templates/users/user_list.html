@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block header %} Список пользователей {% endblock %}
+{% block content %}
+<h1>Список пользователей</h1>
+<ul>
+  {% for user in users %}
+    <li><a href="{% url 'user_profile' user.id %}">Имя: {{ user.get_full_name }} Email: {{ user.email }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
